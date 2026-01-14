@@ -70,7 +70,7 @@ function loadGallery(){
 
 function logout(){
     localStorage.removeItem("token");
-    window.location.href="login.html";
+    window.location.href="/";
 }
 loadGallery();
 function deleteMedia(filename){
