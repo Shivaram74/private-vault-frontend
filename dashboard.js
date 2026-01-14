@@ -1,7 +1,8 @@
 const API="https://private-vault-backend.onrender.com";
 const token=localStorage.getItem("token");
-if(!token){
-    window.location.href="login.html";
+console.log("DASHBOARD TOKEN:",TOKEN);
+if(!token||token==="undefined"){
+    window.location.replace("login.html");
 }
 fetch("${API}/api/private",{
     headers:{Authorization:`Bearer ${token}`
@@ -69,7 +70,6 @@ function loadGallery(){
 }
 
 function logout(){
-    localStorage.removeItem("token");
     window.location.href="login.html";
 }
 loadGallery();

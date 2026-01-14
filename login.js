@@ -21,6 +21,8 @@ async function login() {
     const data = await res.json();
 
     localStorage.setItem("token", data.token);
+    console.log("TOKEN SAVED:",
+    localStorage.getItem("token"));
     window.location.href = "dashboard.html";
 
   } catch (err) {
