@@ -1,20 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Private Vault Dashboard</title>
+  <title>Private Vault</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Private Dashboard</h2>
-    <p id="message">Loading...</p>
-    <hr>
-    <h3>Media Gallery</h3>
-    <div id="gallery"></div>
-    <input type="file" id="media"/><br><br>
-    <button onclick="uploadMedia()">Upload</button>
-    <p id="uploadStatus"></p><br><br>
+
+<header>
+  <h2>🔐 Private Vault</h2>
+  <div>
+    <button onclick="location.href='chat.html'">Chat</button>
     <button onclick="logout()">Logout</button>
-    <script src="dashboard.js"></script>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h3 id="message"></h3>
+  </div>
+
+  <br>
+
+  <div class="card">
+    <input type="file" id="media">
+    <button onclick="uploadMedia()">Upload</button>
+    <p id="uploadStatus"></p>
+  </div>
+
+  <br>
+
+  <div class="card">
+    <h3>Gallery</h3>
+    <div id="gallery"></div>
+  </div>
+
+</div>
+
+<script src="dashboard.js"></script>
 </body>
 </html>

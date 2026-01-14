@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Private Chat</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #chatBox {
+      height: 350px;
+      overflow-y: auto;
+      padding: 10px;
+    }
+    .me {
+      text-align: right;
+      color: #38bdf8;
+      margin: 6px 0;
+    }
+    .other {
+      text-align: left;
+      color: #22c55e;
+      margin: 6px 0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h2>💬 Private Chat</h2>
+  <button onclick="location.href='dashboard.html'">Back</button>
+</header>
+
+<div class="container card">
+  <div id="chatBox"></div>
+  <br>
+  <input id="msg" placeholder="Type message..." style="width:80%">
+  <button onclick="sendMsg()">Send</button>
+</div>
+
+<script src="chat.js"></script>
+</body>
+</html>
