@@ -1,6 +1,6 @@
 const API="https://private-vault-backend.onrender.com";
 const token=localStorage.getItem("token");
-console.log("DASHBOARD TOKEN:",TOKEN);
+console.log("DASHBOARD TOKEN:",token);
 if(!token||token==="undefined"){
     window.location.replace("login.html");
 }
@@ -19,7 +19,7 @@ fetch("${API}/api/private",{
 function uploadMedia(){
     const fileInput=document.getElementById("media");
     const status=document.getElementById("uploadStatus");
-    if(!fileInput.files.length===0){
+    if(!fileInput.files.length){
         status.innerText="please select a file";
         return;
     }
