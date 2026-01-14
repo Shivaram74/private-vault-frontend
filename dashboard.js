@@ -139,7 +139,7 @@ function deleteMedia(filename) {
 // ================= LOGOUT =================
 function logout() {
     localStorage.removeItem("token");
-    window.location.replace("login.html");
+    window.location.replace("./login.html");
 }
 
 loadGallery();
