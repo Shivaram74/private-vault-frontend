@@ -1,7 +1,7 @@
 const API="https://private-vault-backend.onrender.com";
 const token=localStorage.getItem("token");
 if(!token){
-    window.location.href="login.html";
+    window.location.href="/";
 }
 fetch("${API}/api/private",{
     headers:{Authorization:`Bearer ${token}`
@@ -12,7 +12,7 @@ fetch("${API}/api/private",{
     document.getElementById("message").innerText=data.message;
 })
 .catch(()=>{
-    window.location.href="login.html";
+    window.location.href="/";
 });
 
 function uploadMedia(){
