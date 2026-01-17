@@ -3,12 +3,12 @@ const token = localStorage.getItem("token");
 
 console.log("DASHBOARD TOKEN:", token);
 
-// ✅ Auth check
+//Auth check
 if (!token || token === "undefined") {
     window.location.replace("login.html");
 }
 
-// ✅ Private route check
+// Private route check
 fetch(`${API}/api/private`, {
     headers: {
         Authorization: `Bearer ${token}`
@@ -28,7 +28,7 @@ fetch(`${API}/api/private`, {
 })
 .catch(err => {
     console.error("PRIVATE API ERROR:", err);
-    // ❌ DO NOT redirect here
+    //DO NOT redirect here
 });
 
 // ================= UPLOAD =================
@@ -140,6 +140,17 @@ function deleteMedia(filename) {
 function logout() {
     localStorage.removeItem("token");
     window.location.replace("./login.html");
+}
+
+function handleAuthError(res){
+
+  if(res.status === 401 || res.status===403){
+    localStorage.removeItem("token");
+    alert("Session expired. Please login again");
+    window.location.replace("./login.html");
+    return true;
+  }
+  return false;
 }
 
 loadGallery();

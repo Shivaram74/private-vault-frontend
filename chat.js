@@ -39,5 +39,16 @@ function sendMsg() {
   });
 }
 
+function handleAuthError(res){
+
+  if(res.status === 401 || res.status===403){
+    localStorage.removeItem("token");
+    alert("Session expired. Please login again");
+    window.location.replace("./login.html");
+    return true;
+  }
+  return false;
+}
+
 loadMessages();
 setInterval(loadMessages, 2000);
