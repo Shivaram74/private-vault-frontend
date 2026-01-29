@@ -97,15 +97,13 @@ function loadGallery() {
             if (/\.(jpg|jpeg|png|gif)$/i.test(file)) {
                 gallery.innerHTML += `
                 <div style="display:inline-block;margin:10px;text-align:center">
-                    <img src="${API}/uploads/${file}" width="200"/><br>
+                    <img src="${file.url}" width="200"><br>
                     <button onclick="deleteMedia('${file}')">Delete</button>
                 </div>`;
             } else if (/\.(mp4|webm|ogg)$/i.test(file)) {
                 gallery.innerHTML += `
                 <div style="display:inline-block;margin:10px;text-align:center">
-                    <video width="250" controls>
-                        <source src="${API}/uploads/${file}">
-                    </video><br>
+                    <video controls width="250"><source src="${file.url}"></video><br>
                     <button onclick="deleteMedia('${file}')">Delete</button>
                 </div>`;
             }
